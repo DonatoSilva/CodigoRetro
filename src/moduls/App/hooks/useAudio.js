@@ -27,7 +27,6 @@ function useAudio(audioSrc, { loop = false, volume = 1 } = {}) {
 
         const handleTimeUpdate = () => {
             if (isPlayingSegmentRef.current && audio.currentTime >= segmentEndRef.current) {
-                console.log('Reproduciendo segmento en bucle', segmentStartRef.current, segmentEndRef.current)
                 audio.currentTime = segmentStartRef.current;
             }
         };
