@@ -26,5 +26,4 @@ export const MORSE_MAP_ES = {
     X: '-..-',
     Y: '-.--',
     Z: '--..',
-    CH: '----',
 }
