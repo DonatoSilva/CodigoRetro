@@ -5,9 +5,11 @@ import HomePage from '../moduls/Home/HomePage.jsx'
 function AppRouter() {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route index element={<HomePage />} />
-                <Route path="/play" element={<App />} />
+            <Routes >
+                <Route path="/">
+                    <Route index element={<HomePage />} />
+                    <Route path="/play" element={<App />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     )

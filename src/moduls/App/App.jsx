@@ -1,7 +1,7 @@
 import './styles/App.css'
 import useApp from './hooks/useApp'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useNavigate } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import useAudio from './hooks/useAudio'
 import audioSrc from '../../assets/sounds/beep.mp3'
 import CardMose from './components/cardMorse/CardMose'
@@ -186,7 +186,7 @@ function App() {
         <div className="flex items-center gap-3 rounded-xl from-gray-900/60 to-gray-800/60 backdrop-blur-sm -mt-1">
           <span id="timer" className={`font-mono ${paused ? 'text-yellow-700' : 'text-gray-900'} px-2 py-1`}>{formatTime(timeLeft)}</span>
           <div className="w-px h-5 bg-cyan-400/40 mx-1"></div>
-          <div className="flex flex-row items-center text-md items-center gap-2">
+          <div className="flex flex-row text-md items-center gap-2">
             <span id="lives" className="font-mono text-white bg-red-700/60 px-2 rounded shadow-inner">
               {Array.from({ length: lives }).map((_, i) => (
                 <span key={i} className="mx-0.5">❤</span>
@@ -220,6 +220,7 @@ function App() {
             <p className="mt-2 text-gray-700">El juego está pausado</p>
             <div className="mt-6 flex gap-3">
               <button onClick={() => setPaused(false)} className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded">Reanudar</button>
+              <NavLink to="/" className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 rounded">Volver al inicio</NavLink>
             </div>
           </div>
         </div>
